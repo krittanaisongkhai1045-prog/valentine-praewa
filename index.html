@@ -35,62 +35,30 @@
             min-height: 100vh;
             overflow-x: hidden;
             position: relative;
-            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><text y="20" font-size="20">💙</text></svg>'), auto;
-        }
-
-        /* Fireworks Canvas */
-        #fireworks-canvas {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 9998;
-        }
-
-        /* Floating Hearts on Click */
-        .floating-heart {
-            position: fixed;
-            font-size: 30px;
-            pointer-events: none;
-            animation: floatUp 3s ease-out forwards;
-            z-index: 9997;
-        }
-
-        @keyframes floatUp {
-            0% {
-                opacity: 1;
-                transform: translateY(0) rotate(0deg) scale(1);
-            }
-            100% {
-                opacity: 0;
-                transform: translateY(-200px) rotate(360deg) scale(0.5);
-            }
         }
 
         /* Background Music Control */
         .bg-music-control {
             position: fixed;
-            bottom: 20px;
-            right: 20px;
+            bottom: 30px;
+            right: 30px;
             z-index: 9999;
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 15px;
-            border-radius: 15px;
+            padding: 20px;
+            border-radius: 20px;
             box-shadow: 0 10px 40px rgba(10, 77, 104, 0.3);
             border: 2px solid rgba(255, 255, 255, 0.5);
             display: flex;
             flex-direction: column;
-            gap: 12px;
-            min-width: 200px;
+            gap: 15px;
+            min-width: 220px;
         }
 
         .bg-music-control h4 {
             font-family: 'Cormorant Garamond', serif;
             color: var(--ocean-deep);
-            font-size: 1rem;
+            font-size: 1.1rem;
             margin-bottom: 5px;
             text-align: center;
         }
@@ -98,11 +66,11 @@
         .volume-control {
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
 
         .volume-icon {
-            font-size: 1.3rem;
+            font-size: 1.5rem;
             cursor: pointer;
             transition: transform 0.3s;
         }
@@ -115,7 +83,7 @@
             flex: 1;
             -webkit-appearance: none;
             appearance: none;
-            height: 5px;
+            height: 6px;
             border-radius: 3px;
             background: linear-gradient(to right, var(--ocean-light), var(--ocean-medium));
             outline: none;
@@ -124,8 +92,8 @@
         .volume-slider::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             background: var(--ocean-medium);
             cursor: pointer;
@@ -133,8 +101,8 @@
         }
 
         .volume-slider::-moz-range-thumb {
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
             background: var(--ocean-medium);
             cursor: pointer;
@@ -146,13 +114,12 @@
             background: linear-gradient(135deg, var(--ocean-medium), var(--ocean-light));
             color: white;
             border: none;
-            padding: 8px 15px;
-            border-radius: 10px;
+            padding: 10px 20px;
+            border-radius: 12px;
             font-family: 'Sarabun', sans-serif;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
-            font-size: 0.9rem;
         }
 
         .bg-music-toggle:hover {
@@ -253,7 +220,6 @@
             justify-content: center;
             z-index: 10000;
             transition: opacity 0.8s, visibility 0.8s;
-            padding: 20px;
         }
 
         #password-screen::before {
@@ -283,12 +249,11 @@
         .password-container {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 50px 40px;
+            padding: 60px 50px;
             border-radius: 30px;
             box-shadow: 0 30px 80px rgba(10, 77, 104, 0.5);
             text-align: center;
             max-width: 450px;
-            width: 100%;
             animation: fadeInUp 0.8s ease;
             border: 3px solid rgba(255, 255, 255, 0.5);
         }
@@ -307,7 +272,7 @@
         .password-container h1 {
             font-family: 'Caveat', cursive;
             color: var(--ocean-deep);
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 15px;
         }
 
@@ -327,10 +292,10 @@
 
         #password-input {
             width: 100%;
-            padding: 16px 20px;
+            padding: 18px 25px;
             border: 3px solid var(--ocean-light);
             border-radius: 15px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             text-align: center;
             transition: all 0.3s;
             font-family: 'Sarabun', sans-serif;
@@ -345,13 +310,13 @@
 
         #password-submit {
             width: 100%;
-            padding: 16px;
+            padding: 18px;
             margin-top: 20px;
             background: linear-gradient(135deg, var(--ocean-medium), var(--ocean-light));
             color: white;
             border: none;
             border-radius: 15px;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
@@ -391,14 +356,14 @@
         header {
             position: relative;
             text-align: center;
-            padding: 60px 20px 40px;
+            padding: 80px 20px 60px;
             background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, transparent 100%);
             backdrop-filter: blur(5px);
         }
 
         header h1 {
             font-family: 'Caveat', cursive;
-            font-size: 3.5rem;
+            font-size: 4.5rem;
             background: linear-gradient(135deg, var(--ocean-deep), var(--ocean-light), var(--coral));
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -414,14 +379,14 @@
 
         header .names {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.8rem;
+            font-size: 2rem;
             color: var(--ocean-deep);
             font-weight: 600;
             margin-bottom: 10px;
         }
 
         header .tagline {
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: var(--steel);
             font-style: italic;
         }
@@ -438,72 +403,13 @@
             20%, 40% { transform: scale(1); }
         }
 
-        /* Day Counter */
-        .day-counter {
-            background: linear-gradient(135deg, rgba(255, 143, 163, 0.9), rgba(255, 105, 105, 0.9));
-            backdrop-filter: blur(10px);
-            padding: 40px 30px;
-            border-radius: 25px;
-            text-align: center;
-            margin: 30px auto;
-            max-width: 600px;
-            box-shadow: 0 20px 60px rgba(255, 105, 105, 0.4);
-            border: 3px solid rgba(255, 255, 255, 0.5);
-            animation: pulse-glow 3s ease-in-out infinite;
-        }
-
-        @keyframes pulse-glow {
-            0%, 100% {
-                box-shadow: 0 20px 60px rgba(255, 105, 105, 0.4);
-            }
-            50% {
-                box-shadow: 0 20px 60px rgba(255, 105, 105, 0.7);
-            }
-        }
-
-        .day-counter h3 {
-            font-family: 'Cormorant Garamond', serif;
-            color: white;
-            font-size: 2rem;
-            margin-bottom: 25px;
-            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-        }
-
-        .counter-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .counter-item {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 20px 15px;
-            border-radius: 15px;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-        }
-
-        .counter-number {
-            font-family: 'Caveat', cursive;
-            font-size: 2.5rem;
-            color: var(--ocean-deep);
-            font-weight: 700;
-            line-height: 1;
-        }
-
-        .counter-label {
-            font-size: 0.9rem;
-            color: var(--steel);
-            margin-top: 8px;
-            font-weight: 600;
-        }
-
         /* Navigation */
         nav {
             position: relative;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
             padding: 40px 20px 80px;
             max-width: 1200px;
             margin: 0 auto;
@@ -512,12 +418,13 @@
         .nav-card {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
-            padding: 30px 25px;
+            padding: 35px 40px;
             border-radius: 25px;
             box-shadow: 0 15px 40px rgba(10, 77, 104, 0.2);
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-align: center;
+            min-width: 220px;
             border: 2px solid rgba(255, 255, 255, 0.5);
             position: relative;
             overflow: hidden;
@@ -545,7 +452,7 @@
         }
 
         .nav-card .icon {
-            font-size: 3rem;
+            font-size: 3.5rem;
             margin-bottom: 15px;
             display: block;
             filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
@@ -554,7 +461,7 @@
         .nav-card h3 {
             font-family: 'Cormorant Garamond', serif;
             color: var(--ocean-deep);
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             margin-bottom: 8px;
             font-weight: 600;
         }
@@ -592,7 +499,7 @@
         .section-card {
             background: rgba(255, 255, 255, 0.95);
             backdrop-filter: blur(10px);
-            padding: 40px 30px;
+            padding: 50px;
             border-radius: 30px;
             box-shadow: 0 20px 60px rgba(10, 77, 104, 0.2);
             border: 2px solid rgba(255, 255, 255, 0.5);
@@ -601,8 +508,8 @@
         .section-card h2 {
             font-family: 'Cormorant Garamond', serif;
             color: var(--ocean-deep);
-            font-size: 2.5rem;
-            margin-bottom: 30px;
+            font-size: 2.8rem;
+            margin-bottom: 35px;
             text-align: center;
             font-weight: 700;
         }
@@ -611,7 +518,7 @@
         .music-player {
             background: linear-gradient(135deg, rgba(10, 77, 104, 0.9) 0%, rgba(8, 131, 149, 0.9) 100%);
             backdrop-filter: blur(10px);
-            padding: 35px 25px;
+            padding: 45px;
             border-radius: 25px;
             text-align: center;
             margin-bottom: 30px;
@@ -623,10 +530,10 @@
 
         .music-title {
             font-family: 'Cormorant Garamond', serif;
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             font-weight: 600;
             color: white;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
         }
 
@@ -634,12 +541,12 @@
         .visualizer-container {
             position: relative;
             width: 100%;
-            height: 120px;
-            margin: 20px 0;
+            height: 150px;
+            margin: 25px 0;
             display: flex;
             align-items: flex-end;
             justify-content: center;
-            gap: 3px;
+            gap: 4px;
             background: rgba(0, 0, 0, 0.2);
             border-radius: 15px;
             padding: 15px;
@@ -647,9 +554,9 @@
         }
 
         .visualizer-bar {
-            width: 6px;
+            width: 8px;
             background: linear-gradient(to top, var(--ocean-light), var(--coral));
-            border-radius: 3px 3px 0 0;
+            border-radius: 4px 4px 0 0;
             transition: height 0.1s ease;
             box-shadow: 0 0 10px rgba(5, 191, 219, 0.5);
         }
@@ -658,19 +565,18 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            gap: 20px;
-            margin-top: 20px;
-            flex-wrap: wrap;
+            gap: 25px;
+            margin-top: 25px;
         }
 
         .play-btn {
-            width: 70px;
-            height: 70px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             background: linear-gradient(135deg, var(--coral), var(--sunset));
             border: 4px solid white;
             color: white;
-            font-size: 1.8rem;
+            font-size: 2rem;
             cursor: pointer;
             transition: all 0.3s;
             display: flex;
@@ -685,16 +591,16 @@
         }
 
         .song-select {
-            padding: 12px 20px;
+            padding: 14px 25px;
             border: 2px solid rgba(255, 255, 255, 0.5);
             border-radius: 15px;
-            font-size: 0.95rem;
+            font-size: 1rem;
             font-family: 'Sarabun', sans-serif;
             background: rgba(255, 255, 255, 0.9);
             color: var(--ocean-deep);
             cursor: pointer;
             transition: all 0.3s;
-            max-width: 100%;
+            min-width: 300px;
         }
 
         .song-select:hover {
@@ -704,43 +610,43 @@
 
         /* Story Section */
         .story-content {
-            line-height: 2;
-            font-size: 1.1rem;
+            line-height: 2.2;
+            font-size: 1.2rem;
             color: var(--steel);
             text-align: justify;
             background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
-            padding: 25px;
+            padding: 30px;
             border-radius: 20px;
             border-left: 4px solid var(--ocean-light);
         }
 
         .story-content p {
-            margin-bottom: 20px;
+            margin-bottom: 25px;
         }
 
         .story-content em {
             color: var(--ocean-medium);
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             font-family: 'Caveat', cursive;
         }
 
         .story-content strong {
             color: var(--ocean-deep);
-            font-size: 1.3rem;
+            font-size: 1.4rem;
         }
 
         /* Gallery */
         .gallery-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 25px;
-            margin-top: 30px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 35px;
         }
 
         .gallery-item {
             position: relative;
             background: white;
-            padding: 12px;
+            padding: 15px;
             border-radius: 8px;
             box-shadow: 0 10px 30px rgba(10, 77, 104, 0.2);
             transition: all 0.4s;
@@ -777,10 +683,10 @@
         }
 
         .gallery-caption {
-            margin-top: 10px;
+            margin-top: 12px;
             text-align: center;
             font-family: 'Caveat', cursive;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             color: var(--ocean-deep);
         }
 
@@ -789,16 +695,16 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            padding: 12px 30px;
+            padding: 15px 35px;
             background: white;
             color: var(--ocean-medium);
             border: 2px solid var(--ocean-medium);
             border-radius: 15px;
-            font-size: 1rem;
+            font-size: 1.1rem;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             font-family: 'Sarabun', sans-serif;
         }
 
@@ -814,15 +720,15 @@
             background: linear-gradient(135deg, rgba(244, 228, 193, 0.5) 0%, rgba(255, 229, 236, 0.5) 100%);
             border: 2px dashed var(--gold);
             border-radius: 20px;
-            padding: 20px;
-            margin-top: 25px;
+            padding: 25px;
+            margin-top: 30px;
             backdrop-filter: blur(5px);
         }
 
         .instructions h3 {
             color: var(--ocean-deep);
-            font-size: 1.3rem;
-            margin-bottom: 12px;
+            font-size: 1.4rem;
+            margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 10px;
@@ -831,7 +737,7 @@
 
         .instructions p {
             color: var(--steel);
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         .instructions ul {
@@ -841,10 +747,10 @@
 
         .instructions li {
             color: var(--steel);
-            margin-bottom: 8px;
-            padding-left: 30px;
+            margin-bottom: 10px;
+            padding-left: 35px;
             position: relative;
-            line-height: 1.7;
+            line-height: 1.8;
         }
 
         .instructions li:before {
@@ -853,162 +759,64 @@
             left: 0;
         }
 
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3rem;
+            }
+
+            header .names {
+                font-size: 1.5rem;
+            }
+
+            .password-container {
+                margin: 20px;
+                padding: 40px 30px;
+            }
+
+            .section-card {
+                padding: 30px 20px;
+            }
+
+            .nav-card {
+                min-width: 180px;
+                padding: 30px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05rem;
+                padding: 20px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .bg-music-control {
+                bottom: 20px;
+                right: 20px;
+                min-width: 180px;
+                padding: 15px;
+            }
+
+            .song-select {
+                min-width: 200px;
+            }
+
+            .visualizer-container {
+                height: 100px;
+            }
+        }
+
         .heart-accent {
             display: inline-block;
             color: var(--coral);
             animation: heartbeat 1.5s ease-in-out infinite;
         }
-
-        /* Mobile Responsive */
-        @media (max-width: 768px) {
-            body {
-                cursor: auto;
-            }
-
-            header h1 {
-                font-size: 2.5rem;
-            }
-
-            header .names {
-                font-size: 1.4rem;
-            }
-
-            header .heart-icon {
-                font-size: 2.5rem;
-            }
-
-            .password-container {
-                margin: 20px;
-                padding: 40px 25px;
-            }
-
-            .password-container h1 {
-                font-size: 2rem;
-            }
-
-            .section-card {
-                padding: 25px 20px;
-            }
-
-            .section-card h2 {
-                font-size: 2rem;
-            }
-
-            nav {
-                grid-template-columns: 1fr;
-                padding: 30px 15px 60px;
-            }
-
-            .nav-card {
-                padding: 25px 20px;
-            }
-
-            .nav-card .icon {
-                font-size: 2.5rem;
-            }
-
-            .nav-card h3 {
-                font-size: 1.3rem;
-            }
-
-            .story-content {
-                font-size: 1rem;
-                padding: 20px;
-                line-height: 1.8;
-            }
-
-            .gallery-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                gap: 15px;
-            }
-
-            .bg-music-control {
-                bottom: 15px;
-                right: 15px;
-                min-width: 170px;
-                padding: 12px;
-            }
-
-            .bg-music-control h4 {
-                font-size: 0.9rem;
-            }
-
-            .song-select {
-                font-size: 0.85rem;
-                padding: 10px 15px;
-            }
-
-            .visualizer-container {
-                height: 80px;
-            }
-
-            .play-btn {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-
-            .day-counter {
-                padding: 30px 20px;
-            }
-
-            .day-counter h3 {
-                font-size: 1.6rem;
-            }
-
-            .counter-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 15px;
-            }
-
-            .counter-item {
-                padding: 15px 10px;
-            }
-
-            .counter-number {
-                font-size: 2rem;
-            }
-
-            .counter-label {
-                font-size: 0.8rem;
-            }
-
-            .music-title {
-                font-size: 1.2rem;
-            }
-
-            .floating-heart {
-                font-size: 20px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            header {
-                padding: 40px 15px 30px;
-            }
-
-            header h1 {
-                font-size: 2rem;
-            }
-
-            .password-container {
-                padding: 30px 20px;
-            }
-
-            .counter-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-
-            .gallery-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
     </style>
 </head>
 <body>
-    <!-- Fireworks Canvas -->
-    <canvas id="fireworks-canvas"></canvas>
-
     <!-- Background Music -->
     <audio id="bg-music" loop>
         <source src="4.mp3" type="audio/mpeg">
@@ -1063,29 +871,6 @@
             <div class="names">กฤษณ์ <span class="heart-accent">♥</span> แพรวา</div>
             <p class="tagline">สุขสันต์วันวาเลนไทน์ครั้งแรกของเรา</p>
         </header>
-
-        <!-- Day Counter -->
-        <div class="day-counter">
-            <h3>💕 เราคบกันมาแล้ว 💕</h3>
-            <div class="counter-grid">
-                <div class="counter-item">
-                    <div class="counter-number" id="days">0</div>
-                    <div class="counter-label">วัน</div>
-                </div>
-                <div class="counter-item">
-                    <div class="counter-number" id="hours">0</div>
-                    <div class="counter-label">ชั่วโมง</div>
-                </div>
-                <div class="counter-item">
-                    <div class="counter-number" id="minutes">0</div>
-                    <div class="counter-label">นาที</div>
-                </div>
-                <div class="counter-item">
-                    <div class="counter-number" id="seconds">0</div>
-                    <div class="counter-label">วินาที</div>
-                </div>
-            </div>
-        </div>
 
         <!-- Navigation -->
         <nav id="navigation">
@@ -1212,19 +997,12 @@
                         <li><strong>เพลง:</strong> เลือกเพลงจากดรอปดาวน์แล้วกดปุ่มเล่น</li>
                         <li><strong>ดนตรีประกอบ:</strong> ควบคุมได้ที่มุมล่างขวา</li>
                         <li><strong>แกลเลอรี:</strong> คลิกดูรูปภาพความทรงจำของเรา</li>
-                        <li><strong>เอฟเฟกต์พิเศษ:</strong> คลิกที่หน้าจอเพื่อดูหัวใจลอย!</li>
                     </ul>
                 </div>
 
                 <div class="instructions">
-                    <h3>🎆 ฟีเจอร์พิเศษ</h3>
-                    <ul>
-                        <li>ดอกไม้ไฟตอนเข้าเว็บครั้งแรก</li>
-                        <li>หัวใจลอยขึ้นเมื่อคลิกหน้าจอ</li>
-                        <li>ตัวนับวันที่คบกันแบบเรียลไทม์</li>
-                        <li>Visualizer เคลื่อนไหวตามเพลง</li>
-                        <li>รองรับทุกขนาดหน้าจอ (มือถือ/แท็บเล็ต/คอม)</li>
-                    </ul>
+                    <h3>🎵 เกี่ยวกับเพลง</h3>
+                    <p>เพลงทั้ง 3 เพลงนี้มีความหมายพิเศษสำหรับเราทั้งคู่ สามารถฟังพร้อม visualizer ที่เคลื่อนไหวตามจังหวะเพลง</p>
                 </div>
 
                 <div class="instructions">
@@ -1232,8 +1010,8 @@
                     <ul>
                         <li>เปิดด้วย Chrome หรือ Firefox จะทำงานได้ดีที่สุด</li>
                         <li>ควรใช้หูฟังเพื่อประสบการณ์ที่ดีที่สุด</li>
-                        <li>ลองคลิกทั่วหน้าจอเพื่อดูเอฟเฟกต์พิเศษ!</li>
-                        <li>ทำงานได้ดีบนมือถือและคอมพิวเตอร์</li>
+                        <li>Visualizer จะทำงานเมื่อเล่นเพลง</li>
+                        <li>รูปภาพทั้งหมดโหลดจากไฟล์จริง</li>
                     </ul>
                 </div>
             </div>
@@ -1241,23 +1019,54 @@
     </div>
 
     <script>
-        // ==================== CONFIG ====================
-        const correctPassword = "31122568";
-        const relationshipStartDate = new Date('2025-12-31T00:00:00'); // 31 Dec 2025
-
-        // Photo data
+        // Photo data - will be embedded as base64
         const photos = [
-            { id: 1, caption: "ในห้องกระจก 💙", filename: "1767095604650.jpg" },
-            { id: 2, caption: "ริมทะเลสาบ 🌊", filename: "1767406828992.jpg" },
-            { id: 3, caption: "เดินทางด้วยกัน 👟", filename: "1767406873920.jpg" },
-            { id: 4, caption: "ช่วงเวลาพิเศษ 💕", filename: "20260101_111345.jpg" },
-            { id: 5, caption: "ยิ้มสดใส ☀️", filename: "20260106_080815.jpg" },
-            { id: 6, caption: "พระอาทิตย์ตก 🌅", filename: "IMG_7644.jpg" },
-            { id: 7, caption: "จับมือกัน ❤️", filename: "IMG_7694.jpg" },
-            { id: 8, caption: "ทางเดินของเรา 🥾", filename: "IMG_7698.jpg" }
+            {
+                id: 1,
+                caption: "ในห้องกระจก 💙",
+                filename: "1767095604650.jpg"
+            },
+            {
+                id: 2,
+                caption: "ริมทะเลสาบ 🌊",
+                filename: "1767406828992.jpg"
+            },
+            {
+                id: 3,
+                caption: "เดินทางด้วยกัน 👟",
+                filename: "1767406873920.jpg"
+            },
+            {
+                id: 4,
+                caption: "ช่วงเวลาพิเศษ 💕",
+                filename: "20260101_111345.jpg"
+            },
+            {
+                id: 5,
+                caption: "ยิ้มสดใส ☀️",
+                filename: "20260106_080815.jpg"
+            },
+            {
+                id: 6,
+                caption: "พระอาทิตย์ตก 🌅",
+                filename: "IMG_7644.jpg"
+            },
+            {
+                id: 7,
+                caption: "จับมือกัน ❤️",
+                filename: "IMG_7694.jpg"
+            },
+            {
+                id: 8,
+                caption: "ทางเดินของเรา 🥾",
+                filename: "IMG_7698.jpg"
+            }
         ];
 
-        // Song files
+        // ==================== CONFIG ====================
+        const correctPassword = "31122568";
+
+        // Song files - using relative paths
         const songUrls = {
             'song1': '1.mp3',
             'song2': '2.mp3',
@@ -1269,127 +1078,6 @@
             'song2': 'เพลงรักเพลงแรก - LANDOKMAI',
             'song3': 'หลับตา - ชรัส เฟื่องอารมย์'
         };
-
-        // ==================== FIREWORKS ====================
-        const canvas = document.getElementById('fireworks-canvas');
-        const ctx = canvas.getContext('2d');
-        canvas.width = window.innerWidth;
-        canvas.height = window.innerHeight;
-
-        window.addEventListener('resize', () => {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-        });
-
-        class Particle {
-            constructor(x, y, color) {
-                this.x = x;
-                this.y = y;
-                this.color = color;
-                this.velocity = {
-                    x: (Math.random() - 0.5) * 8,
-                    y: (Math.random() - 0.5) * 8
-                };
-                this.alpha = 1;
-                this.decay = Math.random() * 0.015 + 0.015;
-            }
-
-            draw() {
-                ctx.save();
-                ctx.globalAlpha = this.alpha;
-                ctx.beginPath();
-                ctx.arc(this.x, this.y, 3, 0, Math.PI * 2);
-                ctx.fillStyle = this.color;
-                ctx.fill();
-                ctx.restore();
-            }
-
-            update() {
-                this.velocity.y += 0.1;
-                this.x += this.velocity.x;
-                this.y += this.velocity.y;
-                this.alpha -= this.decay;
-            }
-        }
-
-        let particles = [];
-        const colors = ['#FF6969', '#FF8FA3', '#05BFDB', '#088395', '#FFE5EC', '#F59E0B'];
-
-        function createFirework(x, y) {
-            const particleCount = 60;
-            for (let i = 0; i < particleCount; i++) {
-                particles.push(new Particle(x, y, colors[Math.floor(Math.random() * colors.length)]));
-            }
-        }
-
-        function animateFireworks() {
-            ctx.fillStyle = 'rgba(224, 242, 254, 0.1)';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-
-            particles.forEach((particle, index) => {
-                if (particle.alpha <= 0) {
-                    particles.splice(index, 1);
-                } else {
-                    particle.update();
-                    particle.draw();
-                }
-            });
-
-            requestAnimationFrame(animateFireworks);
-        }
-
-        // Launch fireworks on page load
-        function launchInitialFireworks() {
-            let count = 0;
-            const interval = setInterval(() => {
-                const x = Math.random() * canvas.width;
-                const y = Math.random() * canvas.height * 0.5;
-                createFirework(x, y);
-                count++;
-                if (count >= 8) clearInterval(interval);
-            }, 300);
-        }
-
-        animateFireworks();
-
-        // ==================== FLOATING HEARTS ON CLICK ====================
-        document.addEventListener('click', (e) => {
-            if (e.target.closest('.bg-music-control') || 
-                e.target.closest('button') || 
-                e.target.closest('input') ||
-                e.target.closest('select')) {
-                return; // Don't create hearts when clicking UI elements
-            }
-
-            const hearts = ['💙', '💕', '❤️', '💖', '💗', '💓'];
-            const heart = document.createElement('div');
-            heart.className = 'floating-heart';
-            heart.textContent = hearts[Math.floor(Math.random() * hearts.length)];
-            heart.style.left = e.clientX + 'px';
-            heart.style.top = e.clientY + 'px';
-            document.body.appendChild(heart);
-
-            setTimeout(() => heart.remove(), 3000);
-        });
-
-        // ==================== DAY COUNTER ====================
-        function updateCounter() {
-            const now = new Date();
-            const diff = now - relationshipStartDate;
-
-            const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-            document.getElementById('days').textContent = days;
-            document.getElementById('hours').textContent = hours;
-            document.getElementById('minutes').textContent = minutes;
-            document.getElementById('seconds').textContent = seconds;
-        }
-
-        setInterval(updateCounter, 1000);
-        updateCounter();
 
         // ==================== LOAD GALLERY ====================
         function loadGallery() {
@@ -1410,10 +1098,8 @@
             });
         }
 
-        window.addEventListener('load', () => {
-            loadGallery();
-            setTimeout(launchInitialFireworks, 500);
-        });
+        // Load gallery when page loads
+        window.addEventListener('load', loadGallery);
 
         // ==================== PASSWORD ====================
         const passwordScreen = document.getElementById('password-screen');
@@ -1455,7 +1141,7 @@
         }
 
         function showNav() {
-            document.getElementById('navigation').style.display = 'grid';
+            document.getElementById('navigation').style.display = 'flex';
             document.querySelectorAll('.content-section').forEach(section => {
                 section.classList.remove('active');
             });
@@ -1469,7 +1155,7 @@
         const volumeIcon = document.getElementById('volume-icon');
         let bgMusicPlaying = false;
 
-        bgMusic.volume = 0.3;
+        bgMusic.volume = 0.3; // Default 30%
 
         function toggleBgMusic() {
             if (bgMusicPlaying) {
@@ -1522,10 +1208,11 @@
         let bufferLength;
         let visualizerBars = [];
 
+        // Create visualizer bars
         function createVisualizer() {
             visualizerContainer.innerHTML = '';
             visualizerBars = [];
-            const barCount = window.innerWidth < 768 ? 25 : 40;
+            const barCount = 40;
             
             for (let i = 0; i < barCount; i++) {
                 const bar = document.createElement('div');
@@ -1537,8 +1224,8 @@
         }
 
         createVisualizer();
-        window.addEventListener('resize', createVisualizer);
 
+        // Setup audio context for visualization
         function setupAudioContext() {
             if (!audioContext) {
                 audioContext = new (window.AudioContext || window.webkitAudioContext)();
@@ -1552,6 +1239,7 @@
             }
         }
 
+        // Animate visualizer
         function animateVisualizer() {
             if (!isPlaying) return;
             
@@ -1561,12 +1249,12 @@
             visualizerBars.forEach((bar, index) => {
                 const value = dataArray[index] || 0;
                 const percent = value / 255;
-                const maxHeight = window.innerWidth < 768 ? 70 : 110;
-                const height = Math.max(10, percent * maxHeight);
+                const height = Math.max(10, percent * 120);
                 bar.style.height = height + 'px';
             });
         }
 
+        // Song selection
         songSelect.addEventListener('change', function() {
             const selectedSong = this.value;
             if (selectedSong && songUrls[selectedSong]) {
@@ -1578,6 +1266,7 @@
             }
         });
 
+        // Play/Pause toggle
         function togglePlay() {
             if (!audioPlayer.src || audioPlayer.src === window.location.href) {
                 alert('กรุณาเลือกเพลงก่อนนะ 💙');
@@ -1588,17 +1277,9 @@
                 audioPlayer.pause();
                 playBtn.textContent = '▶️';
                 isPlaying = false;
-                // Resume background music when main music stops
-                if (bgMusicPlaying) {
-                    bgMusic.play();
-                }
             } else {
                 if (!audioContext) {
                     setupAudioContext();
-                }
-                // Pause background music when main music plays
-                if (bgMusicPlaying) {
-                    bgMusic.pause();
                 }
                 audioPlayer.play().catch(err => {
                     console.error('Error playing audio:', err);
@@ -1613,10 +1294,6 @@
         audioPlayer.addEventListener('ended', () => {
             playBtn.textContent = '▶️';
             isPlaying = false;
-            // Resume background music when song ends
-            if (bgMusicPlaying) {
-                bgMusic.play();
-            }
         });
 
         // Shake animation
