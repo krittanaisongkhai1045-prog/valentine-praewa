@@ -418,16 +418,21 @@
         .nav-card {
             background: rgba(255, 255, 255, 0.9);
             backdrop-filter: blur(10px);
-            padding: 35px 40px;
+            padding: 35px 30px;
             border-radius: 25px;
             box-shadow: 0 15px 40px rgba(10, 77, 104, 0.2);
             cursor: pointer;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
             text-align: center;
-            min-width: 220px;
+            width: 240px;
+            height: 240px;
             border: 2px solid rgba(255, 255, 255, 0.5);
             position: relative;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
         }
 
         .nav-card::before {
@@ -446,8 +451,8 @@
         }
 
         .nav-card:hover {
-            transform: translateY(-15px) scale(1.05);
-            box-shadow: 0 25px 60px rgba(8, 131, 149, 0.3);
+            transform: translateY(-10px) scale(1.08);
+            box-shadow: 0 25px 60px rgba(8, 131, 149, 0.35);
             border-color: var(--ocean-light);
         }
 
@@ -779,8 +784,9 @@
             }
 
             .nav-card {
-                min-width: 180px;
-                padding: 30px 25px;
+                width: 200px;
+                height: 200px;
+                padding: 25px 20px;
             }
 
             .story-content {
@@ -880,6 +886,12 @@
                 <p>ทำนองที่มีความหมาย</p>
             </div>
 
+            <div class="nav-card" onclick="showSection('counter')">
+                <span class="icon">💖</span>
+                <h3>วันที่ของเรา</h3>
+                <p>นับวันที่เราคบกัน</p>
+            </div>
+
             <div class="nav-card" onclick="showSection('story')">
                 <span class="icon">💌</span>
                 <h3>เรื่องราวของเรา</h3>
@@ -930,6 +942,54 @@
                 <div class="instructions">
                     <h3>🎼 เพลงที่มีความหมาย</h3>
                     <p>เพลงเหล่านี้คือเพลงที่มีความหมายพิเศษสำหรับเรา พร้อม visualizer ที่เคลื่อนไหวตามจังหวะเพลง 💙</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Day Counter Section -->
+        <div id="counter" class="content-section">
+            <button class="back-btn" onclick="showNav()">← กลับหน้าหลัก</button>
+            <div class="section-card">
+                <h2>💖 วันที่ของเรา</h2>
+                
+                <div style="text-align: center; padding: 40px 20px;">
+                    <div style="background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 229, 236, 0.9) 100%); padding: 50px 30px; border-radius: 30px; box-shadow: 0 20px 60px rgba(10, 77, 104, 0.2); max-width: 600px; margin: 0 auto;">
+                        
+                        <div style="font-size: 3rem; margin-bottom: 20px;">💕</div>
+                        
+                        <div style="font-size: 1.3rem; color: var(--ocean-deep); margin-bottom: 30px; font-family: 'Cormorant Garamond', serif;">
+                            เราเป็นแฟนกัน
+                        </div>
+                        
+                        <div style="background: linear-gradient(135deg, var(--ocean-medium), var(--ocean-light)); padding: 40px; border-radius: 20px; margin-bottom: 30px;">
+                            <div id="day-counter" style="font-size: 5rem; font-weight: bold; color: white; font-family: 'Cormorant Garamond', serif; text-shadow: 2px 2px 10px rgba(0,0,0,0.2);">
+                                0
+                            </div>
+                            <div style="font-size: 1.5rem; color: white; margin-top: 10px;">
+                                วัน
+                            </div>
+                        </div>
+                        
+                        <div style="color: var(--steel); font-size: 1.1rem; line-height: 1.8;">
+                            <div style="margin-bottom: 15px;">
+                                <strong style="color: var(--ocean-deep);">วันที่เริ่มต้น:</strong><br>
+                                31 ธันวาคม 2568
+                            </div>
+                            <div style="margin-bottom: 15px;">
+                                <strong style="color: var(--ocean-deep);">วันนี้:</strong><br>
+                                <span id="today-date"></span>
+                            </div>
+                            <div style="font-size: 1rem; color: var(--coral); margin-top: 25px; font-style: italic;">
+                                "ทุกวันที่ผ่านไป คือวันที่มีค่าที่สุดเมื่ออยู่กับเธอ 💙"
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+
+                <div class="instructions">
+                    <h3>💭 ความหมาย</h3>
+                    <p>ตัวนับนี้จะบอกจำนวนวันที่เราได้เป็นแฟนกัน นับตั้งแต่วันที่ 31 ธันวาคม 2568 ถึงวันนี้ ทุกวันที่ผ่านไปคือวันที่พิเศษสำหรับเรา 💕</p>
                 </div>
             </div>
         </div>
@@ -1295,6 +1355,36 @@
             playBtn.textContent = '▶️';
             isPlaying = false;
         });
+
+        // ==================== DAY COUNTER ====================
+        function updateDayCounter() {
+            // วันที่เริ่มคบกัน: 31 ธันวาคม 2568 (31 December 2025)
+            const startDate = new Date('2025-12-31');
+            const today = new Date();
+            
+            // คำนวณจำนวนวัน
+            const diffTime = Math.abs(today - startDate);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+            
+            // อัพเดทตัวเลข
+            const counterElement = document.getElementById('day-counter');
+            if (counterElement) {
+                counterElement.textContent = diffDays.toLocaleString();
+            }
+            
+            // แสดงวันที่ปัจจุบัน
+            const todayDateElement = document.getElementById('today-date');
+            if (todayDateElement) {
+                const options = { year: 'numeric', month: 'long', day: 'numeric' };
+                todayDateElement.textContent = today.toLocaleDateString('th-TH', options);
+            }
+        }
+
+        // เรียกใช้ครั้งแรกเมื่อโหลดหน้า
+        updateDayCounter();
+        
+        // อัพเดททุก 1 วินาที
+        setInterval(updateDayCounter, 1000);
 
         // Shake animation
         const style = document.createElement('style');
