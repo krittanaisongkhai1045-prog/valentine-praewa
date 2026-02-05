@@ -1,0 +1,1311 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💙 Happy Valentine's Day | กฤษณ์ ♥ แพรวา</title>
+    <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;600;700&family=Cormorant+Garamond:wght@400;600;700&family=Caveat:wght@600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --ocean-deep: #0A4D68;
+            --ocean-medium: #088395;
+            --ocean-light: #05BFDB;
+            --sand: #F4E4C1;
+            --sunset: #FF6969;
+            --concrete: #6B7280;
+            --steel: #374151;
+            --coral: #FF8FA3;
+            --shell: #FFE5EC;
+            --gold: #F59E0B;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Sarabun', sans-serif;
+            background: linear-gradient(180deg, 
+                #E0F2FE 0%,
+                #BAE6FD 30%,
+                #7DD3FC 70%,
+                #0EA5E9 100%);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+        }
+
+        /* Background Music Control */
+        .bg-music-control {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9999;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(10, 77, 104, 0.3);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            min-width: 220px;
+        }
+
+        .bg-music-control h4 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--ocean-deep);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        .volume-control {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .volume-icon {
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .volume-icon:hover {
+            transform: scale(1.2);
+        }
+
+        .volume-slider {
+            flex: 1;
+            -webkit-appearance: none;
+            appearance: none;
+            height: 6px;
+            border-radius: 3px;
+            background: linear-gradient(to right, var(--ocean-light), var(--ocean-medium));
+            outline: none;
+        }
+
+        .volume-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--ocean-medium);
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(8, 131, 149, 0.4);
+        }
+
+        .volume-slider::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: var(--ocean-medium);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 8px rgba(8, 131, 149, 0.4);
+        }
+
+        .bg-music-toggle {
+            background: linear-gradient(135deg, var(--ocean-medium), var(--ocean-light));
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 12px;
+            font-family: 'Sarabun', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .bg-music-toggle:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(8, 131, 149, 0.4);
+        }
+
+        /* Ocean Waves Background */
+        .ocean-bg {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 300px;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 200%;
+            height: 100%;
+            background-repeat: repeat-x;
+            animation: wave-animation 25s cubic-bezier(0.36, 0.45, 0.63, 0.53) infinite;
+        }
+
+        .wave:nth-child(1) {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="rgba(14, 165, 233, 0.3)"/></svg>') repeat-x;
+            background-size: 50% 100%;
+            opacity: 0.5;
+            animation-duration: 20s;
+        }
+
+        .wave:nth-child(2) {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" fill="rgba(8, 131, 149, 0.4)"/></svg>') repeat-x;
+            background-size: 50% 100%;
+            opacity: 0.7;
+            animation-duration: 30s;
+            animation-delay: -5s;
+        }
+
+        .wave:nth-child(3) {
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none"><path d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z" fill="rgba(10, 77, 104, 0.6)"/></svg>') repeat-x;
+            background-size: 50% 100%;
+            animation-duration: 40s;
+        }
+
+        @keyframes wave-animation {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
+        /* Floating elements */
+        .floating-elements {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+
+        .float-item {
+            position: absolute;
+            opacity: 0.15;
+            animation: float-drift 20s infinite ease-in-out;
+        }
+
+        @keyframes float-drift {
+            0%, 100% {
+                transform: translate(0, 0) rotate(0deg);
+            }
+            25% {
+                transform: translate(30px, -50px) rotate(90deg);
+            }
+            50% {
+                transform: translate(-20px, -100px) rotate(180deg);
+            }
+            75% {
+                transform: translate(40px, -150px) rotate(270deg);
+            }
+        }
+
+        /* Password Screen */
+        #password-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--ocean-deep) 0%, var(--ocean-medium) 50%, var(--ocean-light) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            transition: opacity 0.8s, visibility 0.8s;
+        }
+
+        #password-screen::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="2" fill="rgba(255,255,255,0.3)"/></svg>');
+            background-size: 50px 50px;
+            animation: drift 30s linear infinite;
+            opacity: 0.3;
+        }
+
+        @keyframes drift {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(-50px, -50px); }
+        }
+
+        #password-screen.hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+
+        .password-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 60px 50px;
+            border-radius: 30px;
+            box-shadow: 0 30px 80px rgba(10, 77, 104, 0.5);
+            text-align: center;
+            max-width: 450px;
+            animation: fadeInUp 0.8s ease;
+            border: 3px solid rgba(255, 255, 255, 0.5);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .password-container h1 {
+            font-family: 'Caveat', cursive;
+            color: var(--ocean-deep);
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .password-container .subtitle {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--ocean-medium);
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .password-container p {
+            color: var(--steel);
+            margin-bottom: 30px;
+            font-size: 1rem;
+        }
+
+        #password-input {
+            width: 100%;
+            padding: 18px 25px;
+            border: 3px solid var(--ocean-light);
+            border-radius: 15px;
+            font-size: 1.2rem;
+            text-align: center;
+            transition: all 0.3s;
+            font-family: 'Sarabun', sans-serif;
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        #password-input:focus {
+            outline: none;
+            border-color: var(--ocean-medium);
+            box-shadow: 0 0 0 5px rgba(8, 131, 149, 0.2);
+        }
+
+        #password-submit {
+            width: 100%;
+            padding: 18px;
+            margin-top: 20px;
+            background: linear-gradient(135deg, var(--ocean-medium), var(--ocean-light));
+            color: white;
+            border: none;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-family: 'Sarabun', sans-serif;
+        }
+
+        #password-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(8, 131, 149, 0.4);
+        }
+
+        .password-error {
+            color: var(--sunset);
+            margin-top: 15px;
+            font-weight: 600;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+
+        .password-error.show {
+            opacity: 1;
+        }
+
+        /* Main Content */
+        #main-content {
+            opacity: 0;
+            transition: opacity 0.8s ease 0.3s;
+            position: relative;
+            z-index: 2;
+        }
+
+        #main-content.visible {
+            opacity: 1;
+        }
+
+        /* Header */
+        header {
+            position: relative;
+            text-align: center;
+            padding: 80px 20px 60px;
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.7) 0%, transparent 100%);
+            backdrop-filter: blur(5px);
+        }
+
+        header h1 {
+            font-family: 'Caveat', cursive;
+            font-size: 4.5rem;
+            background: linear-gradient(135deg, var(--ocean-deep), var(--ocean-light), var(--coral));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 15px;
+            animation: gentle-wave 3s ease-in-out infinite;
+        }
+
+        @keyframes gentle-wave {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        header .names {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 2rem;
+            color: var(--ocean-deep);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        header .tagline {
+            font-size: 1.2rem;
+            color: var(--steel);
+            font-style: italic;
+        }
+
+        header .heart-icon {
+            font-size: 3rem;
+            margin: 20px 0;
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            10%, 30% { transform: scale(1.2); }
+            20%, 40% { transform: scale(1); }
+        }
+
+        /* Navigation */
+        nav {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 25px;
+            padding: 40px 20px 80px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .nav-card {
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            padding: 35px 40px;
+            border-radius: 25px;
+            box-shadow: 0 15px 40px rgba(10, 77, 104, 0.2);
+            cursor: pointer;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            text-align: center;
+            min-width: 220px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .nav-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(5, 191, 219, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .nav-card:hover::before {
+            left: 100%;
+        }
+
+        .nav-card:hover {
+            transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 25px 60px rgba(8, 131, 149, 0.3);
+            border-color: var(--ocean-light);
+        }
+
+        .nav-card .icon {
+            font-size: 3.5rem;
+            margin-bottom: 15px;
+            display: block;
+            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.1));
+        }
+
+        .nav-card h3 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--ocean-deep);
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .nav-card p {
+            color: var(--steel);
+            font-size: 0.95rem;
+        }
+
+        /* Content Sections */
+        .content-section {
+            position: relative;
+            max-width: 950px;
+            margin: 40px auto;
+            padding: 20px;
+            display: none;
+            animation: slideIn 0.6s ease;
+        }
+
+        .content-section.active {
+            display: block;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 50px;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(10, 77, 104, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+
+        .section-card h2 {
+            font-family: 'Cormorant Garamond', serif;
+            color: var(--ocean-deep);
+            font-size: 2.8rem;
+            margin-bottom: 35px;
+            text-align: center;
+            font-weight: 700;
+        }
+
+        /* Music Player with Visualizer */
+        .music-player {
+            background: linear-gradient(135deg, rgba(10, 77, 104, 0.9) 0%, rgba(8, 131, 149, 0.9) 100%);
+            backdrop-filter: blur(10px);
+            padding: 45px;
+            border-radius: 25px;
+            text-align: center;
+            margin-bottom: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 10px 40px rgba(8, 131, 149, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .music-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.7rem;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 25px;
+            text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Audio Visualizer */
+        .visualizer-container {
+            position: relative;
+            width: 100%;
+            height: 150px;
+            margin: 25px 0;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: 4px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 15px;
+            padding: 15px;
+            overflow: hidden;
+        }
+
+        .visualizer-bar {
+            width: 8px;
+            background: linear-gradient(to top, var(--ocean-light), var(--coral));
+            border-radius: 4px 4px 0 0;
+            transition: height 0.1s ease;
+            box-shadow: 0 0 10px rgba(5, 191, 219, 0.5);
+        }
+
+        .player-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        .play-btn {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--coral), var(--sunset));
+            border: 4px solid white;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(255, 105, 105, 0.4);
+        }
+
+        .play-btn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 12px 35px rgba(255, 105, 105, 0.6);
+        }
+
+        .song-select {
+            padding: 14px 25px;
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            border-radius: 15px;
+            font-size: 1rem;
+            font-family: 'Sarabun', sans-serif;
+            background: rgba(255, 255, 255, 0.9);
+            color: var(--ocean-deep);
+            cursor: pointer;
+            transition: all 0.3s;
+            min-width: 300px;
+        }
+
+        .song-select:hover {
+            border-color: white;
+            box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+        }
+
+        /* Story Section */
+        .story-content {
+            line-height: 2.2;
+            font-size: 1.2rem;
+            color: var(--steel);
+            text-align: justify;
+            background: linear-gradient(to bottom, rgba(255, 255, 255, 0.5), transparent);
+            padding: 30px;
+            border-radius: 20px;
+            border-left: 4px solid var(--ocean-light);
+        }
+
+        .story-content p {
+            margin-bottom: 25px;
+        }
+
+        .story-content em {
+            color: var(--ocean-medium);
+            font-size: 1.3rem;
+            font-family: 'Caveat', cursive;
+        }
+
+        .story-content strong {
+            color: var(--ocean-deep);
+            font-size: 1.4rem;
+        }
+
+        /* Gallery */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 35px;
+        }
+
+        .gallery-item {
+            position: relative;
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 10px 30px rgba(10, 77, 104, 0.2);
+            transition: all 0.4s;
+            cursor: pointer;
+            transform: rotate(0deg);
+        }
+
+        .gallery-item:nth-child(odd) {
+            transform: rotate(-2deg);
+        }
+
+        .gallery-item:nth-child(even) {
+            transform: rotate(2deg);
+        }
+
+        .gallery-item:hover {
+            transform: rotate(0deg) scale(1.08) translateY(-10px);
+            box-shadow: 0 20px 50px rgba(8, 131, 149, 0.3);
+            z-index: 10;
+        }
+
+        .gallery-photo {
+            position: relative;
+            aspect-ratio: 1;
+            border-radius: 4px;
+            overflow: hidden;
+            background: linear-gradient(135deg, var(--sand), var(--shell));
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .gallery-caption {
+            margin-top: 12px;
+            text-align: center;
+            font-family: 'Caveat', cursive;
+            font-size: 1.3rem;
+            color: var(--ocean-deep);
+        }
+
+        /* Back Button */
+        .back-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 15px 35px;
+            background: white;
+            color: var(--ocean-medium);
+            border: 2px solid var(--ocean-medium);
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-bottom: 30px;
+            font-family: 'Sarabun', sans-serif;
+        }
+
+        .back-btn:hover {
+            background: var(--ocean-medium);
+            color: white;
+            transform: translateX(-5px);
+            box-shadow: 0 5px 20px rgba(8, 131, 149, 0.3);
+        }
+
+        /* Instructions */
+        .instructions {
+            background: linear-gradient(135deg, rgba(244, 228, 193, 0.5) 0%, rgba(255, 229, 236, 0.5) 100%);
+            border: 2px dashed var(--gold);
+            border-radius: 20px;
+            padding: 25px;
+            margin-top: 30px;
+            backdrop-filter: blur(5px);
+        }
+
+        .instructions h3 {
+            color: var(--ocean-deep);
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Cormorant Garamond', serif;
+        }
+
+        .instructions p {
+            color: var(--steel);
+            line-height: 1.8;
+        }
+
+        .instructions ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .instructions li {
+            color: var(--steel);
+            margin-bottom: 10px;
+            padding-left: 35px;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        .instructions li:before {
+            content: "🌊";
+            position: absolute;
+            left: 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 3rem;
+            }
+
+            header .names {
+                font-size: 1.5rem;
+            }
+
+            .password-container {
+                margin: 20px;
+                padding: 40px 30px;
+            }
+
+            .section-card {
+                padding: 30px 20px;
+            }
+
+            .nav-card {
+                min-width: 180px;
+                padding: 30px 25px;
+            }
+
+            .story-content {
+                font-size: 1.05rem;
+                padding: 20px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 20px;
+            }
+
+            .bg-music-control {
+                bottom: 20px;
+                right: 20px;
+                min-width: 180px;
+                padding: 15px;
+            }
+
+            .song-select {
+                min-width: 200px;
+            }
+
+            .visualizer-container {
+                height: 100px;
+            }
+        }
+
+        .heart-accent {
+            display: inline-block;
+            color: var(--coral);
+            animation: heartbeat 1.5s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Music -->
+    <audio id="bg-music" loop>
+        <!-- Background music can be added here if needed -->
+    </audio>
+
+    <!-- Background Music Control -->
+    <div class="bg-music-control">
+        <h4>🎼 ดนตรีประกอบ</h4>
+        <div class="volume-control">
+            <span class="volume-icon" id="volume-icon" onclick="toggleMute()">🔊</span>
+            <input type="range" min="0" max="100" value="30" class="volume-slider" id="volume-slider">
+        </div>
+        <button class="bg-music-toggle" id="bg-music-toggle" onclick="toggleBgMusic()">▶️ เปิดเพลง</button>
+    </div>
+
+    <!-- Ocean Background -->
+    <div class="ocean-bg">
+        <div class="wave"></div>
+        <div class="wave"></div>
+        <div class="wave"></div>
+    </div>
+
+    <!-- Floating Elements -->
+    <div class="floating-elements">
+        <div class="float-item" style="left: 10%; top: 15%; font-size: 2.5rem; animation-delay: 0s;">🐚</div>
+        <div class="float-item" style="left: 80%; top: 25%; font-size: 2rem; animation-delay: 2s;">⚓</div>
+        <div class="float-item" style="left: 25%; top: 45%; font-size: 2.2rem; animation-delay: 4s;">🌊</div>
+        <div class="float-item" style="left: 70%; top: 55%; font-size: 2rem; animation-delay: 6s;">⛵</div>
+        <div class="float-item" style="left: 15%; top: 75%; font-size: 2.3rem; animation-delay: 8s;">💙</div>
+        <div class="float-item" style="left: 85%; top: 65%; font-size: 2rem; animation-delay: 10s;">💕</div>
+        <div class="float-item" style="left: 45%; top: 20%; font-size: 2.5rem; animation-delay: 3s;">🐠</div>
+        <div class="float-item" style="left: 55%; top: 80%; font-size: 2rem; animation-delay: 7s;">❤️</div>
+    </div>
+
+    <!-- Password Screen -->
+    <div id="password-screen">
+        <div class="password-container">
+            <h1>💙 Happy Valentine's Day 💙</h1>
+            <div class="subtitle">กฤษณ์ ♥ แพรวา</div>
+            <p>ใส่รหัสพิเศษของเราเพื่อเข้าสู่ความทรงจำ</p>
+            <input type="password" id="password-input" placeholder="รหัสของเรา...">
+            <button id="password-submit">เข้าสู่โลกของเรา 💙</button>
+            <div class="password-error" id="password-error">รหัสไม่ถูกต้อง ลองใหม่อีกครั้งนะ 💔</div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div id="main-content">
+        <header>
+            <div class="heart-icon">💙</div>
+            <h1>Happy Valentine's Day</h1>
+            <div class="names">กฤษณ์ <span class="heart-accent">♥</span> แพรวา</div>
+            <p class="tagline">สุขสันต์วันวาเลนไทน์ครั้งแรกของเรา</p>
+        </header>
+
+        <!-- Navigation -->
+        <nav id="navigation">
+            <div class="nav-card" onclick="showSection('music')">
+                <span class="icon">🎵</span>
+                <h3>เพลงของเรา</h3>
+                <p>ทำนองที่มีความหมาย</p>
+            </div>
+
+            <div class="nav-card" onclick="showSection('story')">
+                <span class="icon">💌</span>
+                <h3>เรื่องราวของเรา</h3>
+                <p>จากการถ่ายภาพสู่หัวใจ</p>
+            </div>
+
+            <div class="nav-card" onclick="showSection('gallery')">
+                <span class="icon">📸</span>
+                <h3>ความทรงจำของเรา</h3>
+                <p>ช่วงเวลาที่สวยงาม</p>
+            </div>
+
+            <div class="nav-card" onclick="showSection('instructions')">
+                <span class="icon">📝</span>
+                <h3>วิธีใช้งาน</h3>
+                <p>คู่มือการใช้งาน</p>
+            </div>
+        </nav>
+
+        <!-- Music Section -->
+        <div id="music" class="content-section">
+            <button class="back-btn" onclick="showNav()">← กลับหน้าหลัก</button>
+            <div class="section-card">
+                <h2>🎵 เพลงของเรา</h2>
+                
+                <div class="music-player">
+                    <div class="music-title" id="now-playing">เลือกเพลงที่ต้องการฟัง</div>
+                    
+                    <select class="song-select" id="song-select">
+                        <option value="">-- เลือกเพลง --</option>
+                        <option value="song1">เธอคนนั้น เธอทั้งนั้น - Groove Riders</option>
+                        <option value="song2">เพลงรักเพลงแรก - LANDOKMAI</option>
+                        <option value="song3">หลับตา - ชรัส เฟื่องอารมย์</option>
+                    </select>
+
+                    <!-- Audio Visualizer -->
+                    <div class="visualizer-container" id="visualizer">
+                        <!-- Bars will be generated by JavaScript -->
+                    </div>
+
+                    <div class="player-controls">
+                        <button class="play-btn" id="play-btn" onclick="togglePlay()">▶️</button>
+                    </div>
+
+                    <audio id="audio-player" style="display: none;"></audio>
+                </div>
+
+                <div class="instructions">
+                    <h3>🎼 เพลงที่มีความหมาย</h3>
+                    <p>เพลงเหล่านี้คือเพลงที่มีความหมายพิเศษสำหรับเรา พร้อม visualizer ที่เคลื่อนไหวตามจังหวะเพลง 💙</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Story Section -->
+        <div id="story" class="content-section">
+            <button class="back-btn" onclick="showNav()">← กลับหน้าหลัก</button>
+            <div class="section-card">
+                <h2>💌 เรื่องราวของเรา</h2>
+                
+                <div class="story-content">
+                    <p>
+                        จริงๆ แล้วเราต่างก็เคยรู้จักและพบเจอกัน จากคนที่เคยถ่ายภาพให้ในวันนั้น ผมก็ไม่เคยคิดว่าจะเป็นแฟนผมในขณะนี้ 
+                    </p>
+                    
+                    <p>
+                        ในตลอดเวลาที่ผ่านก็ขอบคุณนะที่ยังคงหลงเหลือความชอบในตัวผม ไม่ว่าก่อนหน้านี้เธอจะพบเจอกับสิ่งใดมา แต่ ณ ตอนนี้ คุณมีผมแล้วนะ 
+                    </p>
+                    
+                    <p>
+                        ผมจะคอยรักและทนุถนอมหัวใจของเธอนะแพรวา 
+                    </p>
+
+                    <p>
+                        <strong>สุขสันต์วันวาเลนไทน์ครั้งแรกของคู่เรานะครับ</strong><br>
+                        ขอให้ความสุขจงสถิตอยู่คู่กับเธอนะคนเก่ง<br>
+                        <em>กฤษณ์รักแพรวานะ 💙</em>
+                    </p>
+                </div>
+
+                <div class="instructions">
+                    <h3>💭 จากใจ</h3>
+                    <p>ทุกคำในนี้มาจากหัวใจจริงๆ ของผม ขอบคุณที่เป็นส่วนหนึ่งในชีวิตของผมนะ</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Gallery Section -->
+        <div id="gallery" class="content-section">
+            <button class="back-btn" onclick="showNav()">← กลับหน้าหลัก</button>
+            <div class="section-card">
+                <h2>📸 ความทรงจำของเรา</h2>
+                
+                <div class="gallery-grid" id="gallery-grid">
+                    <!-- Photos will be loaded here by JavaScript -->
+                </div>
+
+                <div class="instructions">
+                    <h3>💕 ช่วงเวลาพิเศษ</h3>
+                    <p>ความทรงจำสวยๆ ที่เราได้สร้างด้วยกัน</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Instructions Section -->
+        <div id="instructions" class="content-section">
+            <button class="back-btn" onclick="showNav()">← กลับหน้าหลัก</button>
+            <div class="section-card">
+                <h2>📝 คู่มือการใช้งาน</h2>
+
+                <div class="instructions">
+                    <h3>✅ วิธีใช้งาน</h3>
+                    <ul>
+                        <li><strong>รหัสผ่าน:</strong> 31122568</li>
+                        <li><strong>เพลง:</strong> เลือกเพลงจากดรอปดาวน์แล้วกดปุ่มเล่น</li>
+                        <li><strong>ดนตรีประกอบ:</strong> ควบคุมได้ที่มุมล่างขวา</li>
+                        <li><strong>แกลเลอรี:</strong> คลิกดูรูปภาพความทรงจำของเรา</li>
+                    </ul>
+                </div>
+
+                <div class="instructions">
+                    <h3>🎵 เกี่ยวกับเพลง</h3>
+                    <p>เพลงทั้ง 3 เพลงนี้มีความหมายพิเศษสำหรับเราทั้งคู่ สามารถฟังพร้อม visualizer ที่เคลื่อนไหวตามจังหวะเพลง</p>
+                </div>
+
+                <div class="instructions">
+                    <h3>💡 เคล็ดลับ</h3>
+                    <ul>
+                        <li>เปิดด้วย Chrome หรือ Firefox จะทำงานได้ดีที่สุด</li>
+                        <li>ควรใช้หูฟังเพื่อประสบการณ์ที่ดีที่สุด</li>
+                        <li>Visualizer จะทำงานเมื่อเล่นเพลง</li>
+                        <li>รูปภาพทั้งหมดโหลดจากไฟล์จริง</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Photo data - will be embedded as base64
+        const photos = [
+            {
+                id: 1,
+                caption: "ในห้องกระจก 💙",
+                filename: "1767095604650.jpg"
+            },
+            {
+                id: 2,
+                caption: "ริมทะเลสาบ 🌊",
+                filename: "1767406828992.jpg"
+            },
+            {
+                id: 3,
+                caption: "เดินทางด้วยกัน 👟",
+                filename: "1767406873920.jpg"
+            },
+            {
+                id: 4,
+                caption: "ช่วงเวลาพิเศษ 💕",
+                filename: "20260101_111345.jpg"
+            },
+            {
+                id: 5,
+                caption: "ยิ้มสดใส ☀️",
+                filename: "20260106_080815.jpg"
+            },
+            {
+                id: 6,
+                caption: "พระอาทิตย์ตก 🌅",
+                filename: "IMG_7644.jpg"
+            },
+            {
+                id: 7,
+                caption: "จับมือกัน ❤️",
+                filename: "IMG_7694.jpg"
+            },
+            {
+                id: 8,
+                caption: "ทางเดินของเรา 🥾",
+                filename: "IMG_7698.jpg"
+            }
+        ];
+
+        // ==================== CONFIG ====================
+        const correctPassword = "31122568";
+
+        // Song files - using relative paths
+        const songUrls = {
+            'song1': '1.mp3',
+            'song2': '2.mp3',
+            'song3': '3.mp3'
+        };
+
+        const songNames = {
+            'song1': 'เธอคนนั้น เธอทั้งนั้น - Groove Riders',
+            'song2': 'เพลงรักเพลงแรก - LANDOKMAI',
+            'song3': 'หลับตา - ชรัส เฟื่องอารมย์'
+        };
+
+        // ==================== LOAD GALLERY ====================
+        function loadGallery() {
+            const galleryGrid = document.getElementById('gallery-grid');
+            
+            photos.forEach(photo => {
+                const galleryItem = document.createElement('div');
+                galleryItem.className = 'gallery-item';
+                
+                galleryItem.innerHTML = `
+                    <div class="gallery-photo">
+                        <img src="${photo.filename}" alt="${photo.caption}">
+                    </div>
+                    <div class="gallery-caption">${photo.caption}</div>
+                `;
+                
+                galleryGrid.appendChild(galleryItem);
+            });
+        }
+
+        // Load gallery when page loads
+        window.addEventListener('load', loadGallery);
+
+        // ==================== PASSWORD ====================
+        const passwordScreen = document.getElementById('password-screen');
+        const passwordInput = document.getElementById('password-input');
+        const passwordSubmit = document.getElementById('password-submit');
+        const passwordError = document.getElementById('password-error');
+        const mainContent = document.getElementById('main-content');
+
+        function checkPassword() {
+            if (passwordInput.value === correctPassword) {
+                passwordScreen.classList.add('hidden');
+                setTimeout(() => {
+                    mainContent.classList.add('visible');
+                }, 300);
+            } else {
+                passwordError.classList.add('show');
+                passwordInput.value = '';
+                passwordInput.style.animation = 'shake 0.5s';
+                setTimeout(() => {
+                    passwordError.classList.remove('show');
+                    passwordInput.style.animation = '';
+                }, 2000);
+            }
+        }
+
+        passwordSubmit.addEventListener('click', checkPassword);
+        passwordInput.addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') checkPassword();
+        });
+
+        // ==================== NAVIGATION ====================
+        function showSection(sectionId) {
+            document.getElementById('navigation').style.display = 'none';
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function showNav() {
+            document.getElementById('navigation').style.display = 'flex';
+            document.querySelectorAll('.content-section').forEach(section => {
+                section.classList.remove('active');
+            });
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // ==================== BACKGROUND MUSIC ====================
+        const bgMusic = document.getElementById('bg-music');
+        const bgMusicToggle = document.getElementById('bg-music-toggle');
+        const volumeSlider = document.getElementById('volume-slider');
+        const volumeIcon = document.getElementById('volume-icon');
+        let bgMusicPlaying = false;
+
+        bgMusic.volume = 0.3; // Default 30%
+
+        function toggleBgMusic() {
+            if (bgMusicPlaying) {
+                bgMusic.pause();
+                bgMusicToggle.textContent = '▶️ เปิดเพลง';
+                bgMusicPlaying = false;
+            } else {
+                bgMusic.play();
+                bgMusicToggle.textContent = '⏸️ หยุดเพลง';
+                bgMusicPlaying = true;
+            }
+        }
+
+        volumeSlider.addEventListener('input', function() {
+            bgMusic.volume = this.value / 100;
+            updateVolumeIcon();
+        });
+
+        function toggleMute() {
+            if (bgMusic.volume > 0) {
+                bgMusic.volume = 0;
+                volumeSlider.value = 0;
+            } else {
+                bgMusic.volume = 0.3;
+                volumeSlider.value = 30;
+            }
+            updateVolumeIcon();
+        }
+
+        function updateVolumeIcon() {
+            if (bgMusic.volume === 0) {
+                volumeIcon.textContent = '🔇';
+            } else if (bgMusic.volume < 0.5) {
+                volumeIcon.textContent = '🔉';
+            } else {
+                volumeIcon.textContent = '🔊';
+            }
+        }
+
+        // ==================== AUDIO VISUALIZER ====================
+        const audioPlayer = document.getElementById('audio-player');
+        const playBtn = document.getElementById('play-btn');
+        const songSelect = document.getElementById('song-select');
+        const nowPlaying = document.getElementById('now-playing');
+        const visualizerContainer = document.getElementById('visualizer');
+        let isPlaying = false;
+        let audioContext;
+        let analyser;
+        let dataArray;
+        let bufferLength;
+        let visualizerBars = [];
+
+        // Create visualizer bars
+        function createVisualizer() {
+            visualizerContainer.innerHTML = '';
+            visualizerBars = [];
+            const barCount = 40;
+            
+            for (let i = 0; i < barCount; i++) {
+                const bar = document.createElement('div');
+                bar.className = 'visualizer-bar';
+                bar.style.height = '10px';
+                visualizerContainer.appendChild(bar);
+                visualizerBars.push(bar);
+            }
+        }
+
+        createVisualizer();
+
+        // Setup audio context for visualization
+        function setupAudioContext() {
+            if (!audioContext) {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                analyser = audioContext.createAnalyser();
+                const source = audioContext.createMediaElementSource(audioPlayer);
+                source.connect(analyser);
+                analyser.connect(audioContext.destination);
+                analyser.fftSize = 128;
+                bufferLength = analyser.frequencyBinCount;
+                dataArray = new Uint8Array(bufferLength);
+            }
+        }
+
+        // Animate visualizer
+        function animateVisualizer() {
+            if (!isPlaying) return;
+            
+            requestAnimationFrame(animateVisualizer);
+            analyser.getByteFrequencyData(dataArray);
+            
+            visualizerBars.forEach((bar, index) => {
+                const value = dataArray[index] || 0;
+                const percent = value / 255;
+                const height = Math.max(10, percent * 120);
+                bar.style.height = height + 'px';
+            });
+        }
+
+        // Song selection
+        songSelect.addEventListener('change', function() {
+            const selectedSong = this.value;
+            if (selectedSong && songUrls[selectedSong]) {
+                audioPlayer.src = songUrls[selectedSong];
+                nowPlaying.textContent = songNames[selectedSong];
+                playBtn.textContent = '▶️';
+                isPlaying = false;
+                audioPlayer.pause();
+            }
+        });
+
+        // Play/Pause toggle
+        function togglePlay() {
+            if (!audioPlayer.src || audioPlayer.src === window.location.href) {
+                alert('กรุณาเลือกเพลงก่อนนะ 💙');
+                return;
+            }
+
+            if (isPlaying) {
+                audioPlayer.pause();
+                playBtn.textContent = '▶️';
+                isPlaying = false;
+            } else {
+                if (!audioContext) {
+                    setupAudioContext();
+                }
+                audioPlayer.play().catch(err => {
+                    console.error('Error playing audio:', err);
+                    alert('ไม่สามารถเล่นเพลงได้ กรุณาตรวจสอบไฟล์เพลง');
+                });
+                playBtn.textContent = '⏸️';
+                isPlaying = true;
+                animateVisualizer();
+            }
+        }
+
+        audioPlayer.addEventListener('ended', () => {
+            playBtn.textContent = '▶️';
+            isPlaying = false;
+        });
+
+        // Shake animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes shake {
+                0%, 100% { transform: translateX(0); }
+                25% { transform: translateX(-10px); }
+                75% { transform: translateX(10px); }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>
